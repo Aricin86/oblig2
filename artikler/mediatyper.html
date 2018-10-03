@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mediatyper - Artikkel</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" media="screen" href="../css/stilark.css" />
+    <link rel="stylesheet" media="print" href="../css/print.css" />
+</head>
+
+<body class="hovedgridboks">
+    <header class="main_header">
+        <!-- Breadcrumb-meny -->
+        <nav class="breadcrumb_meny">
+            <p>Du er her: 
+                <a href="../index.html">Hjem</a> &gt;
+                <a href="index.html">Artikler</a> &gt;
+                <span>Mediatyper</span>
+            </p>
+        </nav>
+
+        <h1>DataDepoet</h1>
+        <p id="tagline">En ressursside for kurset Webutvikling 2018</p>
+        
+        <!-- Hovedmenyen -->
+        <nav class="hovedmeny">
+            <a href="../index.html">Hjem</a>
+            <a href="git_github.html">Git/GitHub</a>
+            <a href="mediatyper.html">Mediatyper</a>
+            <a href="css_layout.html">CSS Layout</a>
+            <a href="index.html">Artikler</a>
+        </nav>
+    </header>
+    
+    <main class="artikkel">
+        <article>
+            <header>
+                <h2>Mediatyper</h2>
+            </header>
+            
+            <section>
+                <header>
+                    <h3>Hva er medietyper?</h3>
+                </header>
+            
+                <p>Mediatyper ble orginalt innført i HTML4 og gjorde det mulig å definere stiler for forskjellige mediatyper. Media referer til hvilken type apparat som blir brukt for å vise websiden. For øyeblikket finnes det fire mediatyper som det fortsatt er i bruk; all, screen, print og speech<sup><a href="#en">[1]</a></sup>. Disse blir nok også utfaset etter hvert da det nye systemet med media queries er bedre egnet i utvikling av responsivt design.</p>
+            </section>
+
+            <section>
+                <figure>
+                    <img src="../bilder/type_writer.jpg" alt="Noen som skriver på en gammel skrivemaskin." />
+                    <figcaption>Noen som skriver på en gammel skrivemaskin.</figcaption>
+                </figure>
+            </section>    
+
+            <section>
+                <header>
+                    <h3>Hvordan brukes de?</h3>
+                </header>
+            
+                <p>Man kan lage egne CSS-filer for de forskjellige medietypene, for så å linke til dem til HTML-documentet på vanlig måte. Man refererer da til hvilken mediatype man ønsker det skal gjelde for i linken.<sup><a href="#to">[2]</a></sup> Eksempel HTML-dokument:</p>
+                <code>&lt;link rel="stylesheet" media="print" href="print.css" /&gt;</code>
+                <p>Når nettsiden lastes inn sjekkes det hvilken mediatype som brukes og det rette stilarket blir brukt.</p>
+                <p>De kan også skrives rett inn i CSS-filen med bruk av @media som ble introdusert med media queries. Eksempel CSS-fil:</p>
+                <code>
+                    @media print {
+                        body {
+                            font-size: 11pt;
+                        }
+                    }
+                        
+                    @media screen {
+                        body {
+                            font-size: 16px;
+                        }
+                    }
+                </code> 
+            </section>
+
+            <section>
+                <header>
+                    <h3>Hvilke fordeler og ulemper har dette?</h3>
+                </header>
+
+                <p>Bedre oversikt over hvilke apparater som har støtte når man holder koden adskilt med å bruke flere stilark. Endringene som skal til for god visning på de enkelte mediatypene kan være omstendelig og et stilark kan fort bli uoversiktlig.</p>
+                <p>Med mediatyper kan man gjøre opplevelsen av siden god for alle uansett hvilken måte de velger å vise siden på.</p>
+                <p>Spesielt når man skal skrive ut noe fra en nettside er det nyttig å kunne skille mellom hva som er viktig å få med seg. Er for eksempel ikke viktig å ha med seg menyen til nettsiden på et utskrevet dokument.</p>
+                <p>Det finnes ikke mediatyper som dekker alle typen apparater der ute, så man måtte uansett ha spesifisert for kunne gi det beste resultatet. Dette gjøres bedre i media queries.</p>
+                <p>I de tilfellene det ikke skal så mye til for å dekke behovet for de forskjellige mediatypene. Er det bedre å holde all CSS-kode i samme fil. Gjennom media queries er dette nå mulig med @ regelen.</p>
+            </section>
+
+            <section>
+                <header>
+                    <h3>Hvorfor brukes ikke alle typer like mye som tidligere?</h3>
+                </header>
+
+                <p>Mediatyper ble laget for å gjøre det enklere å stilsette websider for forskjellige apparater, men etter at media queries kom ut med CSS3 ble det enklere å bare gjøre det på den måten. Det finnes utallige apparater med forskjellige størrelser og egenskaper der ute og istedenfor å lage en mediatype til hver enkelt, brukes nå media queries isteden.</p>
+                <p>De mediatypene som ble fjernet<sup><a href="#to">[3]</a></sup> i siste oppdatering er:</p>
+                <dl>
+                    <dt>"tty"</dt>
+                    <dd>Brukes på mediatyper som har begrenset mulighet for visning av innhold. For eksempel terminaler.</dd>
+                    <dt>"tv"</dt>
+                    <dd>For bruk på tv-er. Da disse før hadde lav oppløsning, dårligere farger, osv.</dd>
+                    <dt>"projection"</dt>
+                    <dd>Prosjektorer og lignenende.</dd>
+                    <dt>"handheld"</dt>
+                    <dd>Mobiltelefoner, tabber og andre enheter med små skjermer og begrenset bandwidth.</dd>
+                    <dt>"braille"</dt>
+                    <dd>For å lage blindeskrift.</dd>
+                    <dt>"embossed"</dt>
+                    <dd>For å skrive ut sidene i blindeskrift. Utskriftsfunksjonen til braille.</dd>
+                    <dt>"aural"</dt>
+                    <dd>For mediatyper med talesyntese som er et tekst- til talesystem. Denne er nå byttet ut med "speech".</dd>
+                </dl>
+                <p>Disse skal ikke brukes og utviklere anbefales å velge hensiktsmessige media features (Media feature er en mer fin-justert test enn mediatyper. Den tester en spesifikk egenskap hos brukere eller apparatet) ut fra apparatet de prøver å stilsette.</p>
+            </section>
+
+            <section>
+                <header>
+                    <h3>Kildelinker</h3>
+                </header>
+                <ul>
+                    <li id="en">[1] <a href="https://www.quackit.com/css/css_media_types.cfm">"CSS Media Types"</a> - quakit</li>
+                    <li id="to">[2] <a href="https://www.tutorialspoint.com/css/css_media_types.htm">"CSS - Media Types"</a> - tutorialspoint</li>
+                    <li id="tre">[3] <a href="https://drafts.csswg.org/mediaqueries-4/#media-types">"Media Queries Level 4"</a> - W3C</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+            <p>&copy; DataDepoet, Åse Ulriksen Rørmark, Webutvikling, Høgskolen i Østfold, 2018.</p>
+            <p>aase.u.rormark(at)hiof.no</p>
+    </footer>
+</body>
+</html>

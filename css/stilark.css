@@ -1,0 +1,317 @@
+/*****************************************************
+ * Dette er CSS-filen til Oblig 2, Webutvikling 2018 *
+ *****************************************************/
+
+/**************
+ * BOX-SIZING *
+ **************/
+/* Dette er sett på som det optimaliserte oppsettet av box-sizing: */
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+/************
+ * GENERELT *
+ ************/
+
+body {
+    color: white;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-weight: normal;
+}
+
+/********
+ * GRID *
+ ********/
+
+ /* Hoved-wrapper for grid på hjemmesiden */
+.hovedgridboks {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+        "header header header header header header header header header header header header"
+        "main main main main main main main main main sidekolonne sidekolonne sidekolonne"
+        "footer footer footer footer footer footer footer footer footer footer footer footer"
+}
+
+.main_header {
+    grid-area: header;
+}
+
+.hovedkolonne {
+    grid-area: main;
+}
+
+.sidekolonne {
+    grid-area: sidekolonne;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+ /* Justering av mainområdet for grid på samlesiden for artikler og artikkelsiden */
+.samleside {
+    grid-column: 1 / -1;
+}
+.artikkel {
+    grid-column: 2 / 12;
+}
+
+/********
+ * FLEX *
+ ********/
+
+.hovedmeny {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hovedkolonne, .samleside, .artikkel {
+    display: flex;
+    flex-direction: column;
+}
+
+.hovedkolonne section, .samleside section, .artikkel article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/**********
+ * HEADER *
+ **********/
+
+.main_header {
+    background: url(../bilder/server_room.jpg) no-repeat center /cover;
+}
+
+.breadcrumb_meny p {
+    margin: 0;
+    padding: 0.2rem 0 0 0.5rem;
+    color: white;
+    text-shadow: 0.1rem 0.1rem 0.4rem black;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumb_meny a {
+    color: white;
+    text-shadow: 0.1rem 0.1rem 0.4rem black;
+}
+
+.breadcrumb_meny span {
+    font-weight: bold;
+}
+
+h1 {
+    margin: 2rem 0 0 0;
+    padding-left: 1rem;
+    font-size: 64px;
+    font-size: 4em;
+    color: white;
+    text-shadow: 0.1rem 0.1rem 0.4rem black;
+}
+
+#tagline {
+    margin: 0 0 2rem 0;
+    padding-left: 6rem;
+    color: white;
+    text-shadow: 0.1rem 0.1rem 0.4rem black;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hovedmeny {
+    padding: 1rem 0;
+    background-color: black;
+}
+
+.hovedmeny a {
+    padding: 0.5rem 0;
+    width: 10rem;
+    color: white;
+    font-variant: small-caps;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0.1rem 0.1rem 0.2rem black;
+    background-image: linear-gradient(to bottom right, yellow 5%, orange 25%, maroon 90%);
+    box-shadow: 0.1rem 0.1rem 0.2rem white;
+    border: 1px solid lightgray;
+}
+
+
+
+/**********
+ * FOOTER *
+ **********/
+
+footer {
+    margin: 1rem 1rem 0 1rem;
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+}
+
+
+
+/*******************************
+ * HJEMMESIDEN & ARTIKKELSIDEN *
+ *******************************/
+
+/* Hovedkolonnen */
+main {
+    margin: 0 1rem;
+    border: 2px solid white;
+    color: white;
+}
+
+.hovedkolonne, .samleside {
+    padding: 10px;
+}
+
+.hovedkolonne article, .samleside article {
+    margin: 10px;
+    padding: 10px;
+    max-width: 15rem;
+    background: rgb(44, 40, 40);
+    text-align: center;
+}
+
+.samleside article {
+    max-width: 20rem;
+}
+
+.hovedkolonne article h3, .samleside article h3 {
+    text-align: left;
+}
+
+.hovedkolonne img, .samleside img {
+    width: 100%;
+}
+
+/* Sidekolonnen */
+aside {
+    margin: 0 1rem;
+    border: 2px solid white;
+}
+
+.sidekolonne section {
+    margin: 1rem;
+    padding: 1rem;
+    background: rgb(44, 40, 40);
+    text-align: center;
+}
+
+.sidekolonne section h4 {
+    text-align: left;
+    font-variant: small-caps;
+}
+
+/* Liste med linker */
+.sidekolonne section ul {
+    text-align: left;
+}
+
+.sidekolonne section ul a {
+    color: white;
+}
+
+.sidekolonne section ul a:hover {
+    color: orange;
+}
+
+.sidekolonne section ul a:active {
+    color: maroon;
+}
+
+iframe {
+    border: 10px solid black;
+    border-radius: 15px;
+    box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Knapper */
+.knapp {
+    display: inline-block;
+    padding: 0.5rem 0;
+    width: 12rem;
+    color: white;
+    font-variant: small-caps;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0.1rem 0.1rem 0.2rem black;
+    background-image: linear-gradient(to bottom right, yellow 5%, orange 25%, maroon 90%);
+    box-shadow: 0.1rem 0.1rem 0.2rem white;
+    border: 1px solid lightgray;
+}
+
+
+/*****************
+ * ARTIKKELSIDER *
+ *****************/
+
+.artikkel {
+    padding: 1rem;
+}
+
+.artikkel article header {
+    padding-left: 3rem;
+    width: 100%;
+}
+
+.artikkel section {
+    max-width: 50%;
+    padding: 1rem;
+}
+
+.artikkel img {
+    width: 100%;
+}
+
+.artikkel ul a, .artikkel sup a {
+    color: white;
+}
+
+.artikkel ul a:hover, .artikkel sup a:hover {
+    color: orange;
+}
+
+.artikkel ul a:active, .artikkel sup a:active {
+    color: maroon;
+}
+
+.artikkel blockquote {
+    padding: 2rem 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+
+.artikkel code {
+    padding: 2rem;
+    color: darkgreen; 
+}
+
+/************************
+ * SLUTTEN PÅ CSS-FILEN *
+ ************************/

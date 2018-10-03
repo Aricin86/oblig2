@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Git/GitHub - Artikkel</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" media="screen" href="../css/stilark.css" />
+    <link rel="stylesheet" media="print" href="../css/print.css" />
+</head>
+
+<body class="hovedgridboks">
+    <header class="main_header">
+        <!-- Breadcrumb-meny -->
+        <nav class="breadcrumb_meny">
+            <p>Du er her: 
+                <a href="../index.html">Hjem</a> &gt;
+                <a href="index.html">Artikler</a> &gt;
+                <span>Git/GitHub</span>
+            </p>
+        </nav>
+
+        <h1>DataDepoet</h1>
+        <p id="tagline">En ressursside for kurset Webutvikling 2018</p>
+        
+        <!-- Hovedmenyen -->
+        <nav class="hovedmeny">
+            <a href="../index.html">Hjem</a>
+            <a href="git_github.html">Git/GitHub</a>
+            <a href="mediatyper.html">Mediatyper</a>
+            <a href="css_layout.html">CSS Layout</a>
+            <a href="index.html">Artikler</a>
+        </nav>
+    </header>
+    
+    <main class="artikkel">
+        <article>
+            <header>
+                <h2>Git/GitHub</h2>
+            </header>
+            
+            <section>
+                <header>
+                    <h3>Hva er Git?</h3>
+                </header>
+            
+                <blockquote>
+                    Git er verdens mest populære versjonskontrollsystem.<sup><a href="#en">[1]</a></sup>
+                </blockquote>
+                <p>Git er et versjonskontrollsystem (VCS – version control stystem) for å holde styr på endringene og de forskjellige versjonene av en eller flere filer. Et versjonskontrollsystem er programvare som i all hovedsak blir brukt til å administrere kildekode i utviklingen av programvare. Det finnes mange slike programmer og som med IDE (integrated development eviroment), velger man den man liker best. Noen av de mest kjente er TFS (Microsoft Team Fundation Server), Helix Core, Subversion, AWS CodeCommit, Mercurial, Fossil og Plastic SCM.</p>
+                <p>Git har åpen kildekode (open-source). Det betyr at den originale koden er tilgjengelig for alle og at man kan endre og dele den på nytt. Git ble startet av Linus Trovalds, en av de mest kjente programvareutviklerne i verden. Han er blant annet grunnleggeren av Linux, som også har åpen kildekode. Git er bygget for å virke med Linux kernel, som betyr at den måtte ta hånd om store repositories. Det er skrevet i et språk kalt C, som reduserer tiden det tar å utføre kommandoer. Git er bygget med tanke på fart og ytelse.</p>
+                <p>Det finnes forskjellige typer versjonskontroller, men de to største bolkene kommer under distribuert versjonskontroll og klient-tjener systemet. Git er en distribuert versjonskontroll. Det betyr at den komplette kodebasen, inkludert hele endringshistorikken, ligger på alle datamaskinene som er knyttet til det prosjektet.</p>
+            </section>
+
+            <section>
+                <figure>
+                    <img src="../bilder/git_github.jpg" alt="Logoene til Git og GitHub." />
+                    <figcaption>Logo av Git (venstre) og GitHub (høyre).</figcaption>
+                </figure>
+            </section>    
+
+            <section>
+                <header>
+                    <h3>Hva er GitHub?</h3>
+                </header>
+            
+                <blockquote>
+                    "GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere."<sup><a href="#to">[2]</a></sup>
+                </blockquote>
+                <p>GitHub er bygget på versjonskontrollsystemet til Git. Det vil si at versjonskontroll er implementert på siden og at man får god kontroll på prosjekter og filer. Det gjør det også enkelt å samarbeide med andre på prosjekter uansett hvor de er i verden. En av de største attributtene til GitHub er muligheten for nettverksbygging. GitHub er en møteplass der folk deler, lærer og jobber sammen for å lage programvare.</p>
+                <p>Noen arbeidsgivere spør søkere om de har noe liggende på GitHub og dette kan telle positivt i forbindelse med jobbsøking. Det er gratis å bruke GitHub for offentlige prosjekter og prosjekter med åpen kildekode.</p>
+                <p>For å lage ett nytt prosjekt på GitHub oppretter man et repository<sup><a href="#tre">[3]</a></sup>. Repository er kjernen av et versjonskontrollsystem, som oppbevarer prosjektets datastruktur og metadata. Den kan inneholde filer, bilder, videoer eller hva som helst annet man trenger i prosjektet.</p>
+                <p>Det er mulig å lage forgreininger for å lage endringer som ikke påvirker hovedprosjektet ("forking"/"brancing"). Etter at man har gjort endringer og ser at disse er nyttige og stabile fletter man dem inn i hovedprosjektet igjen med å "hente den inn". Dette gjøres ved å lage en "pull request" som åpner en dialog med forfatterne av prosjektet og det er enkelt å ha en diskusjon om hvorvidt endringene som er gjort er klare for å tas inn i hovedprosjektet.</p>
+            </section>
+
+            <section>
+                <header>
+                    <h3>Hvilke fordeler er det med å bruke Git?</h3>
+                </header>
+
+                <p>Siden Git er en distribuert versjonskontroll og alle datamaskinene har hele repository nedlastet, er det en smal sak hvis en server dør eller man mister datamaskinen. Det vil da bare være å laste inn prosjektet fra en av de andre datamaskinene. Alle har en klonet versjon av prosjektet og en full backup av dataen, uavhengig av nettverkstilgang og sentrale servere.</p>
+                <p>I Git har man mulighet til å gjøre noe kalt branching (forgreining). Når man lager en forgreining går man ut av master (hovedlinjen), men med den som grunnlag, og kan teste nye ting uten at det har effekt på hovedlinjen for utviklingen. Man kan bytte mellom å jobbe med de forskjellige forgreiningene og når man er fornøyd gjør man en merge (fusjon). Man fletter da sammen koden fra forgreiningen med hovedlinjen. Dette gjør at utviklingen av et program ikke trenger å være lineær, men støtter at man kan jobbe mer fleksibelt med flere deler samtidig.</p>
+            </section>
+
+            <section>
+                <header>
+                    <h3>Min vurdering av Git</h3>
+                </header>
+
+                <p>Førsteinnskytelsen er at Git ser ut som et utrolig nyttig verktøy for utvikling av programvare og andre type prosjekter. Etter å ha lest, opprettet min egen bruker og lastet ned Git føles det litt i overkant å bruke Git til et så lite prosjekt som dette, men for læringen sin skyld er det perfekt. Har ikke satt meg inn i kommandoskriving i Git og kjører heller desktop-versjonen, da tiden rett og slett ikke strekker til denne gangen.</p>
+
+                <figure>
+                    <img src="../bilder/git_github.jpg" alt="Min siste commit til Git." />
+                    <figcaption>Min siste commit til Git.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <header>
+                    <h3>Kildelinker og ressurser</h3>
+                </header>
+                <ul>
+                    <li id="en">[1] <a href="https://rhodecode.com/insights/version-control-systems-2016">"Version Control System Popularity in 2016"</a> - RhodeCode</li>
+                    <li id="to">[2] <a href="https://guides.github.com/activities/hello-world/">"Hello World"</a> - GotHub</li>
+                    <li id="tre">[3] <a href="http://svnbook.red-bean.com/en/1.7/svn.basic.version-control-basics.html#svn.basic.repository">"Version Control Basics"</a> - Version Control with Subversion</li>
+                </ul>
+                <ul>
+                    <li><a href="https://www.atlassian.com/git/tutorials/what-is-git">"What is Git"</a> - Atlassian Bitbucket</li>
+                    <li><a href="https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/">"What Is GitHub, and What Is It Used For?"</a> - How-To Geek</li>
+                    <li><a href="https://en.wikipedia.org/wiki/Git">"Git"</a> - Wikipedia</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+            <p>&copy; DataDepoet, Åse Ulriksen Rørmark, Webutvikling, Høgskolen i Østfold, 2018.</p>
+            <p>aase.u.rormark(at)hiof.no</p>
+    </footer>
+</body>
+</html>
